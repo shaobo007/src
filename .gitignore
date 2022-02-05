@@ -1,0 +1,16 @@
+*.o
+*.so
+*.diff
+*.rej
+*.orig
+dmenu/dmenu
+dmenu/stest
+dwm/dwm
+dwmblocks/dwmblocks
+st/st
+surf/surf
+tabbed/tabbed
+tabbed/xembed
+yay-bin/
+*_
+
