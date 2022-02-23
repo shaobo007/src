@@ -59,7 +59,7 @@ static const Rule rules[] = {
 
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
-static const int nmaster     = 1;    /* number of clients in master area */
+static int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
@@ -160,6 +160,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_bracketright,spawn,              SHCMD("mpc seek +60") },
 	{ MODKEY,                       XK_backslash,   view,               {0} },
 
+	{ MODKEY,                       XK_a,           spawn,              SHCMD("maimpick") },
+	{ MODKEY|ShiftMask,             XK_a,           spawn,              SHCMD("dmenurecord") },
 	{ MODKEY,                       XK_s,           togglesticky,       {0} },
 	{ MODKEY,                       XK_d,           spawn,              SHCMD("dmenurecent") },
 	{ MODKEY|ShiftMask,             XK_d,           spawn,              SHCMD("passmenu") },
@@ -177,6 +179,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_grave,       togglescratch,      {.ui = 0} },
 
 	{ MODKEY,                       XK_z,           spawn,              SHCMD("man -k . | dmenu -l 30 | awk '{print$1}' | xargs -r man -Tpdf | zathura -") },
+	{ MODKEY,                       XK_x,           spawn,              SHCMD("dmenurecord kill") },
 	{ MODKEY,                       XK_c,           spawn,              SHCMD("$BROWSER") },
 	{ MODKEY|ShiftMask,             XK_c,           spawn,              SHCMD("tabbed surf -e") },
 	{ MODKEY,                       XK_b,           spawn,              SHCMD("wp-change") },
@@ -215,9 +218,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_space,       zoom,               {0} },
 	{ MODKEY|ShiftMask,             XK_space,       togglefloating,     {0} },
 
-	{ MODKEY|ControlMask,           XK_a,           spawn,              SHCMD("maimpick") },
-	{ MODKEY|ControlMask,           XK_r,           spawn,              SHCMD("dmenurecord") },
-	{ MODKEY|ControlMask,           XK_k,           spawn,              SHCMD("dmenurecord kill") },
 	{ MODKEY,                       XK_Delete,      spawn,              SHCMD("dmenurecord kill") },
 
 	{ 0,                   XF86XK_AudioMute,        spawn,              SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
