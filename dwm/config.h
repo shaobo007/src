@@ -2,7 +2,7 @@
 
 /* Constants */
 #define TERMINAL "st"
-#define TERMCLASS "St"
+#define TERMCLASS "st-256color"
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
@@ -168,6 +168,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_backslash,   view,               {0} },
 
 	{ MODKEY,                       XK_a,           spawn,              SHCMD("maimpick") },
+	{ Mod1Mask,                     XK_a,           spawn,              SHCMD("maim -s | xclip -selection clipboard -t image/png && notify-send 'sreenshot copied !'") },
 	{ MODKEY|ShiftMask,             XK_a,           spawn,              SHCMD("dmenurecord") },
 	{ MODKEY,                       XK_s,           togglesticky,       {0} },
 	{ MODKEY,                       XK_d,           spawn,              SHCMD("dmenurecent") },
