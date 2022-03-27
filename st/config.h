@@ -5,10 +5,10 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Hack Nerd Font Mono:pixelsize=15:antialias=true:autohint=true";
+static char *font = "Hack Nerd Font Mono:pixelsize=17:antialias=true:autohint=true";
 static char *font2[] = {
-  "JoyPixels:pixelsize=14:antialias=true:autohint=true"
-  "Noto Sans CJK SC:pixelsize=14:antialias=true:autohint=true"
+  "JoyPixels:pixelsize=15:antialias=true:autohint=true"
+  "Noto Sans CJK SC:pixelsize=15:antialias=true:autohint=true"
 };
 static int borderpx = 2;
 
